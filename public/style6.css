@@ -1,0 +1,91 @@
+/* Basic reset and box-sizing */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the page container */
+body {
+    font-family: Arial, sans-serif; /* Set font for the page */
+    margin: 5px; /* Add margin around the page */
+    background-color: #f4f4f4; /* Light gray background for the page */
+}
+
+/* Style the title above the table */
+h1 {
+    text-align: center; /* Center-align the title */
+    color: black; /* Green text color */
+    font-size: 2em; /* Increase font size for the title */
+    margin-bottom: 20px; /* Add space below the title */
+    margin-top:120px;
+    font-weight: bold; /* Make the title text bold */
+}
+
+/* Style the table */
+table {
+    width: 70%; /* Adjust the width of the table */
+    max-width: 800px; /* Optional: Set a maximum width for larger screens */
+    margin: 20px auto; /* Center the table horizontally */
+    border-collapse: collapse; /* Remove space between borders */
+    background-color: #ffffff; /* White background for the table */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+/* Style the table header */
+thead {
+    background-color: black; /* Dark green background for the header */
+    color: #ffffff; /* White text color */
+}
+
+th {
+    padding: 12px; /* Padding inside header cells */
+    text-align: left; /* Align text to the left */
+    border-bottom: 2px solid #ddd; /* Bottom border for header cells */
+}
+
+/* Style table body cells */
+tbody td {
+    border-bottom: 1px solid #ddd; /* Light gray border at the bottom of each cell */
+    padding: 10px; /* Padding inside body cells */
+    text-align: left; /* Align text to the left */
+}
+
+/* Zebra stripes for alternating rows */
+tbody tr:nth-child(odd) {
+    background-color: #f9f9f9; /* Light gray background for odd rows */
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1; /* Slightly darker gray for hover effect */
+}
+.head {
+    position: fixed; /* Fixes the navbar to the top */
+    top: 0; /* Aligns it to the top of the viewport */
+    left: 0; /* Aligns it to the left of the viewport */
+    width: 100%; /* Makes the navbar span the full width of the viewport */
+    background-color: maroon; /* Background color for the navbar */
+    color: white; /* Improved text visibility on dark background */
+    font-weight: bold;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 0; /* Remove margin to avoid shifting */
+    border-radius: 0; /* Remove border radius for a clean edge */
+    font-size: 2rem; /* Adjusted font size for responsiveness */
+    z-index: 1000; /* Ensures the navbar stays on top of other elements */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: add shadow for depth */
+}
+
+button {
+    background-color: #007bff; /* Added background color for visibility */
+    color: white; /* Button text color */
+    border: none;
+    border-radius: 10px;
+    font-size: 1.25rem; /* Adjusted font size */
+    padding: 15px 30px; /* Adjusted padding for better button size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+

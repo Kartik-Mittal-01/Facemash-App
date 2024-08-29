@@ -1,0 +1,20 @@
+button {
+    background-color: #007bff; /* Added background color for visibility */
+    color: white; /* Button text color */
+    border: none;
+    border-radius: 10px;
+    font-size: 1.25rem; /* Adjusted font size */
+    padding: 15px 30px; /* Adjusted padding for better button size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 2vw; /* Adjusted gap for responsiveness */
+    font-size: 25px;
+    align-items: center; /* Vertically centers links */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

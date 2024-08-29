@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FaceMash</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        let currentUser1Id = "<%= user1._id %>";
+        let currentUser2Id = "<%= user2._id %>";
+
+        // Function to fetch new entries
+        async function fetchNewEntries() {
+            try {
+                const response = await fetch('/new-entries');
+                const entries = await response.json();
+                if (entries.length === 2) {
+                    const [newuser1, newuser2] = entries;
+                    document.getElementById('left-img').src = newuser1.image;
+                    document.getElementById('right-img').src = newuser2.image;
+                    document.getElementById('user1-name').textContent = newuser1.name;
+                    document.getElementById('user2-name').textContent = newuser2.name;
+
+                    // Update current user IDs
+                    currentUser1Id = newuser1._id;
+                    currentUser2Id = newuser2._id;
+                } else {
+                    console.log('Not enough entries available.');
+                }
+            } catch (error) {
+                console.error('Error fetching new entries:', error);
+            }
+        }
+
+        // Function to handle image click
+        async function onImageClick(winnerId) {
+            try {
+                await fetch('/update-ratings', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        winnerId: winnerId,
+                        loserId: winnerId === currentUser1Id ? currentUser2Id : currentUser1Id
+                    })
+                });
+
+                // Fetch new entries after updating ratings
+                fetchNewEntries();
+            } catch (error) {
+                console.error('Error updating ratings:', error);
+            }
+        }
+
+        async function fetchTrendingUsers() {
+            try {
+                const response = await fetch('/trending-users');
+                const users = await response.json();
+                const trendingUsersContainer = document.getElementById('trending-users');
+
+                if (users.length > 0) {
+                    trendingUsersContainer.innerHTML = users.map(user => `
+                        <div class="trending-user">
+                            <img src="${user.image}" alt="${user.name}">
+                            <div>${user.name}</div>
+                            <div>Rating: ${user.rating}</div>
+                        </div>
+                    `).join('');
+                } else {
+                    trendingUsersContainer.innerHTML = '<p>No trending users available.</p>';
+                }
+            } catch (error) {
+                console.error('Error fetching trending users:', error);
+            }
+        }
+
+        // Fetch trending users on page load
+        document.addEventListener('DOMContentLoaded', fetchTrendingUsers);
+    </script>
+</head>
+<body>
+    <div class="head">
+        FACEMASH-IITD
+        <form action="/users/new" method="get">
+            <button class="headbtn">Join Us</button>
+        </form>
+       
+        
+    </div>
+    <div class="desc">
+        Were we let in for our looks? No. Will we be judged on them? Yes.
+    </div>
+    <div class="semidesc">
+        <b>Who's Hotter? <i id="user1-name"><%= user1.name %></i> OR <i id="user2-name"><%= user2.name %></i> ? Click to Choose.</b>
+    </div>
+    <div class="container">
+        <div class="leftbox">
+            <img id="left-img" src="<%= user1.image %>" alt="" onclick="onImageClick('<%= user1._id %>')">
+        </div>
+        <div class="or">OR</div>
+        <div class="rightbox">
+            <img id="right-img" src="<%= user2.image %>" alt="" onclick="onImageClick('<%= user2._id %>')">
+        </div>
+    </div>
+
+    <div class="trending-section">
+        <h2>Trending Users</h2>
+        <div id="trending-users">
+            <!-- Trending users will be inserted here by JavaScript -->
+        </div>
+    </div>
+
+
+
+    <footer>
+        <%- include("includes/footer.ejs") %>
+    </footer>
+</body>
+</html>

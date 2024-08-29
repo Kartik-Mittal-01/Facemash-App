@@ -1,0 +1,144 @@
+/* Reset margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+}
+
+/* Basic styling for body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f0f0; /* Slightly lighter background for better contrast */
+    color: #333;
+}
+
+/* Styling for the head section */
+.head {
+    position: fixed; /* Fixes the navbar to the top */
+    top: 0; /* Aligns it to the top of the viewport */
+    left: 0; /* Aligns it to the left of the viewport */
+    width: 100%; /* Makes the navbar span the full width of the viewport */
+    background-color: maroon; /* Background color for the navbar */
+    color: white; /* Improved text visibility on dark background */
+    font-weight: bold;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+    margin: 0; /* Remove margin to avoid shifting */
+    border-radius: 0; /* Remove border radius for a clean edge */
+    font-size: 2rem; /* Adjusted font size for responsiveness */
+    z-index: 1000; /* Ensures the navbar stays on top of other elements */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: add shadow for depth */
+}
+
+/* Styling for the description section */
+.desc {
+    text-align: center;
+    font-size: 2.5rem; /* Adjusted font size */
+    margin: 20px 0; /* Increased margin for better spacing */
+    color: #555; /* Slightly darker text for better readability */
+    font-weight: 300; /* Lighter font weight for a softer look */
+    margin-top: 100px;
+}
+
+/* Styling for the semi-description section */
+.semidesc {
+    text-align: center;
+    font-size: 1.5rem; /* Adjusted font size */
+    margin: 20px 0; /* Adjusted margin for spacing */
+    color: #333; /* Darker text color for better readability */
+    font-weight: 500; /* Slightly bolder font for emphasis */
+}
+
+/* Container for image boxes */
+.container {
+    width: 70vw; /* Slightly smaller width for better alignment */
+    max-width: 900px; /* Max width to control layout on larger screens */
+    margin: 30px auto; /* Centered container with spacing */
+    height: 50vh; /* Adjusted height for balance */
+    display: flex;
+    justify-content: space-around; /* Better spacing between boxes */
+    align-items: center;
+    border: 2px solid #ddd; /* Light border for subtle separation */
+    border-radius: 10px; /* Rounded corners for the container */
+    background-color: #fff; /* White background for the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    overflow: hidden; /* Ensure content does not overflow the container */
+}
+
+/* Styling for the left and right image boxes */
+.leftbox, .rightbox {
+    width: 45%; /* Increased width for better image visibility */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 10px; /* Rounded corners for image boxes */
+    background-color: #f9f9f9; /* Light background for image boxes */
+    padding: 10px; /* Reduced padding for a tighter fit */
+    height: 90%; /* Ensure height is consistent and leaves space for container border */
+}
+
+/* Image styling to ensure it fits within the container */
+img {
+    width: 100%; /* Makes the image fit the width of the container */
+    height: 100%; /* Makes the image fit the height of the container */
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+    display: block; /* Removes any extra space below the image */
+    border-radius: 8px; /* Rounded corners for images */
+}
+
+/* Footer styling */
+footer {
+    margin-top: 40px; /* Increased space above the footer */
+    text-align: center; /* Centered text in the footer */
+    color: #777; /* Subtle text color for footer */
+    font-size: 1rem; /* Adjusted font size */
+}
+
+/* Hover effects */
+img:hover {
+    cursor: pointer;
+    border: 3px solid #007bff; /* Highlight image on hover with color matching the button */
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+/* Styling for trending users section */
+.trending-section {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff; /* White background for contrast */
+    border: 1px solid #ddd; /* Light border for separation */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.trending-section h2 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.trending-user {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.trending-user img {
+    width: 50px; /* Adjust size as needed */
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.trending-user div {
+    margin-right: 10px;
+}
+
+.trending-user div:last-child {
+    font-weight: bold;
+}
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranking</title>
+    <link rel="stylesheet" href="style6.css">
+</head>
+<body>
+    <div class="head">
+        FACEMASH-IITD
+        <form action="/users/new" method="get">
+            <button class="headbtn">Join Us</button>
+        </form>
+    </div>
+    <h1>RANKINGS AS PER VOTES</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Name</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% let rank = 1; %> <!-- Initialize rank counter -->
+            <% for(let user of allEntries) { %>
+                <tr>
+                    <td><%= rank++ %></td> <!-- Display rank and increment -->
+                    <td><%= user.name %></td>
+                    <td><%= user.rating %></td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+    <footer>
+        <%- include("includes/footer.ejs") %>
+    </footer>
+</body>
+</html>

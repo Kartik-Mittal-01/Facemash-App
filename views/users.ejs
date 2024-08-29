@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <div class="head">
+        FACEMASH-IITD | All Users On the Facemash
+       
+        <form action="/users/new" method="get">
+            <button class="headbtn">Join Us</button>
+        </form>
+    </div>
+    
+    <div class="container">
+        <% for(let user of allusers){ %>
+            <div class="user-profile">
+                <div class="image">
+                    <img src="<%= user.image %>" alt="User Profile Photo">
+
+                </div>
+                <div class="name"><%= user.name %></div>
+                <form action="/users/<%=user._id%>" method="get"><button>View-Profile</button></form>
+            </div>
+        <% } %>
+    </div>
+    
+    <footer>
+        <%- include("includes/footer.ejs") %>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,86 @@
+/* style7.css */
+
+/* Ensure that any existing styles for .head and button are preserved */
+
+.profile-container {
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    flex: 0 0 150px;
+    margin-right: 20px;
+}
+
+.profile-pic img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    border: 3px solid #ddd;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-info h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.profile-info p {
+    margin: 5px 0;
+    color: #666;
+}
+
+/* Optional styling for profile content if needed */
+.profile-content {
+    padding: 10px;
+    /* Add additional styling here */
+}
+
+.head {
+    background-color: maroon;
+    color: white; /* Improved text visibility on dark background */
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin: 4px;
+    border-radius: 10px;
+    font-size: 2rem; /* Adjusted font size for responsiveness */
+}
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 2vw; /* Adjusted gap for responsiveness */
+    font-size: 25px;
+    align-items: center; /* Vertically centers links */
+    margin-top: 20px;
+}
+
+button {
+    background-color: #007bff; /* Added background color for visibility */
+    color: white; /* Button text color */
+    border: none;
+    border-radius: 10px;
+    font-size: 1.25rem; /* Adjusted font size */
+    padding: 15px 30px; /* Adjusted padding for better button size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        /* Existing styles here */
+        
+        .profile-container {
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: relative; /* Needed for absolute positioning of the edit button */
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            position: relative; /* Allows for child elements to be positioned absolutely */
+        }
+
+        .profile-pic {
+            flex: 0 0 150px;
+            margin-right: 20px;
+        }
+
+        .profile-pic img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+            border: 3px solid #ddd;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-info {
+            flex: 1;
+        }
+
+        .profile-info h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .profile-info p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        .profile-content {
+            padding: 10px;
+        }
+
+        .profile-content p.description {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .head {
+            background-color: maroon;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            margin: 4px;
+            border-radius: 10px;
+            font-size: 2rem;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.25rem;
+            padding: 15px 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 2vw;
+            font-size: 25px;
+            align-items: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .edit-profile-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #28a745;
+            color: white;
+            font-size: 1rem;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .edit-profile-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="head">
+        FACEMASH-IITD
+        
+        <form action="/users/new" method="get">
+            <button class="headbtn">Join Us</button>
+        </form>
+    </div>
+    <div class="profile-container">
+        <div class="profile-header">
+            <div class="profile-pic">
+                <img src="<%= entry.image %>" alt="Profile Picture">
+            </div>
+            <div class="profile-info">
+                <h1><%= entry.name %></h1>
+                <p>Rank: <%= entry.rating %></p>
+            </div>
+            <!-- Edit Profile Button -->
+            <form action="/users/<%= entry._id %>/edit" method="get">
+                <button type="submit" class="edit-profile-btn">Edit Profile</button>
+            </form>
+        </div>
+        <div class="profile-content">
+            <!-- Additional content here -->
+            <p class="description"><%= entry.description %></p>
+        </div>
+    </div>
+    <footer>
+        <%- include("includes/footer.ejs") %>
+    </footer>
+</body>
+</html>

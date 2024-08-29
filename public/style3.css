@@ -1,0 +1,134 @@
+/* General body styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header styles */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    margin: 4px;
+    border-radius: 10px;
+}
+
+/* Container for user profiles */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 80px;
+}
+
+/* Individual user profile styles */
+.user-profile {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Image styles */
+.user-profile .image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Name styles */
+.user-profile .name {
+    font-size: 1.2em;
+    color: #333;
+    margin: 0;
+}
+
+/* Footer styles */
+button {
+    background-color: #007bff; /* Added background color for visibility */
+    color: white; /* Button text color */
+    border: none;
+    border-radius: 10px;
+    font-size: 1.25rem; /* Adjusted font size */
+    padding: 15px 30px; /* Adjusted padding for better button size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 2vw; /* Adjusted gap for responsiveness */
+    font-size: 25px;
+    align-items: center; /* Vertically centers links */
+    margin-top: 20px;
+}
+
+img{
+    max-width: 186.5px;
+    max-height: 200px;
+}
+
+.head {
+    position: fixed; /* Fixes the navbar to the top */
+    top: 0; /* Aligns it to the top of the viewport */
+    left: 0; /* Aligns it to the left of the viewport */
+    width: 100%; /* Makes the navbar span the full width of the viewport */
+    background-color: maroon; /* Background color for the navbar */
+    color: white; /* Improved text visibility on dark background */
+    font-weight: bold;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 0; /* Remove margin to avoid shifting */
+    border-radius: 0; /* Remove border radius for a clean edge */
+    font-size: 2rem; /* Adjusted font size for responsiveness */
+    z-index: 1000; /* Ensures the navbar stays on top of other elements */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: add shadow for depth */
+}
+.image{
+    height: 80%;
+}
+
+.headbtn{
+    margin-left: 20px;
+}
+
+
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-right: 10px; /* Space between search bar and button */
+}
+
+.headbtn {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.headbtn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+

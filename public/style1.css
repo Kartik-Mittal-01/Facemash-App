@@ -1,0 +1,100 @@
+/* Reset default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set a background color and text color for the whole page */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    margin-bottom: 20px;
+    
+}
+
+/* Style for main headings */
+h1 {
+    font-size: 2.5em; /* Increased font size */
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+/* Style for subheadings */
+h2 {
+    font-size: 2em; /* Increased font size */
+    color: #0056b3;
+    margin-bottom: 20px;
+}
+
+/* Style for paragraphs */
+p {
+    font-size: 1.2em; /* Increased font size */
+    margin-bottom: 20px;
+}
+
+/* Style for unordered lists */
+ul {
+    list-style-type: none; /* Removes default bullets */
+    padding-left: 0; /* Removes default padding */
+}
+
+ul li {
+    font-size: 1.2em; /* Increased font size for list items */
+    background: #e9ecef;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    padding: 15px;
+}
+
+/* Style for horizontal lines */
+hr {
+    border: 0;
+    height: 2px;
+    background: #ddd;
+    margin: 20px 0;
+}
+
+/* Add some spacing and border for the container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Styling for the head section (navbar) */
+.head {
+    position: fixed; /* Fixes the navbar to the top */
+    top: 0; /* Aligns it to the top of the viewport */
+    left: 0; /* Aligns it to the left of the viewport */
+    width: 100%; /* Makes the navbar span the full width of the viewport */
+    background-color: maroon; /* Background color for the navbar */
+    color: white; /* Improved text visibility on dark background */
+    font-weight: bold;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+    margin: 0; /* Remove margin to avoid shifting */
+    border-radius: 0; /* Remove border radius for a clean edge */
+    font-size: 2rem; /* Adjusted font size for responsiveness */
+    z-index: 1000; /* Ensures the navbar stays on top of other elements */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: add shadow for depth */
+}
+
+button {
+    background-color: #007bff; /* Added background color for visibility */
+    color: white; /* Button text color */
+    border: none;
+    border-radius: 10px;
+    font-size: 1.25rem; /* Adjusted font size */
+    padding: 15px 30px; /* Adjusted padding for better button size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
